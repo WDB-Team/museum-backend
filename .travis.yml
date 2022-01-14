@@ -15,7 +15,8 @@ script:
 
 deploy:
   provider: heroku
-  api_key: 771cba22-0814-46b3-9abd-b5c69a043acc
+  api_key:
+    secure: "dR8OWChyA4ibK1/lj9LHVxx/tpAIx9aSVZm1ie+2voE2JXgCzNZC4ji8tDx/GrUlhi+V+/tzEftS2vGSrDoc17zsyxe6IVmjFJiCF3snKNNedLjxfp34+UTMAJsoZzSGk5+b0BOEWRvbkKkI+PcEAShJgqta4a5wJ/UINsieZmIuChuqEjlQflcUYLKIYF1am8kkSjoX05BgJs4IfwDs8PtbRsG+3UshQ+9WQaSpoZqv4PRVt4L0hesnPslXjvl6bO0ZtVk3HjnQ4uCuZ0ywC8gdfRDi/Ugxllv7msA8gokRnzs9oHVldH8RK5FqgA8hxpuwq9BRuijwhs6NCubqO5+vko0dDWkAnphG8YMHvHeZPMj0ErMhO5sQmrlQ+gHMCnCTPYcqqpbuAf3wUL6OEUWLJpwi4AnCSGrbR06lTMVsx/s9D1mKoKZPLB1Ub2JuXpHEKwoCm+NaXhR89MphhLJiwsV3wOYtkIa+R2PqUeOhstW5wtkg5BfQU/9c/upluBvNeExLM2YzRXuy7FSo6aeIO/RTOrOmcZWEYqwFXItPtVeEskHdTmz1SFLaEiY+OBO1RGBVi2dkDdakdFklRkRKFFQMV+F/qKmiQxFZhEMfOvPPUJ6DdFPXhzOpyK7FIjer0ixMAwHfnrQ1VpnNqOc4B0od+rOMuyUV1yEb3Uo="
   app: museum-backend-cuba
   on:
     repo: WDB-Team/museum-backend
