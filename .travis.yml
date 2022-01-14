@@ -15,8 +15,6 @@ script:
 
 deploy:
   provider: heroku
-  skip-cleanup: true
-  keep-history: true
   api_key: 771cba22-0814-46b3-9abd-b5c69a043acc
   app: museum-backend-cuba
   on:
