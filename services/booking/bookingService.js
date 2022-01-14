@@ -1,5 +1,6 @@
 const { bookingMock } = require('../../utils/mocks/bookingMock.js');
 const bookingStorage = require('./bookingsStorage.js');
+const config = require('../../configs/config.js');
 
 class BookingService {
     constructor(){
@@ -8,10 +9,18 @@ class BookingService {
     async getBookings(filter){
         let bookings = null;
         console.log(filter)
-        if(!filter.id){
-            bookings = await Promise.resolve(bookingMock);
+        if(!filter.id) {
+            if(config.api.useMocks == false) {
+                bookings = await Promise.resolve(bookingMock);
+            } else {
+                
+            }
         } else {
-            bookings = await Promise.resolve(bookingMock[filter.id]);
+            if(config.api.useMocks == false) {
+                bookings = await Promise.resolve(bookingMock[filter.id]);
+            } else {
+
+            }
         }
 
         return bookings;
@@ -24,7 +33,7 @@ class BookingService {
                 return false;
             }
             console.log(body);
-            //bugStorage.addBug(body);
+            //bookingStorage.addBooking(body);
             resolve(body)
         });
     }

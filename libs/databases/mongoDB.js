@@ -7,9 +7,9 @@ function connect() {
     const DB_NAME = config.database.dbName;
     const DB_HOST = config.database.dbHost;
     const MONGO_URI = `mongodb+srv://${USER}:${PASSWORD}@${DB_HOST}/${DB_NAME}?retryWrites=true&w=majority`; 
-    const localUrl = 'mongodb://172.31.192.1:27017/BugTracker'
+    const localUrl = `mongodb://${DB_HOST}/${DB_NAME}`
 
-    mongoose.connect(localUrl, { useNewUrlParser : true, useUnifiedTopology: true}).then(() => {
+    mongoose.connect(config.database.isLocalDB == true ? localUrl : MONGO_URI, { useNewUrlParser : true, useUnifiedTopology: true}).then(() => {
         console.log('Conexion con mongo exitosa');
     }).catch(err => {
         console.error('Error en la conexion con mongodb');

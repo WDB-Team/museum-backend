@@ -6,7 +6,7 @@ const mongooseDBConnect = require('./libs/databases/mongoDB.js')
 const bookingsApi = require('./routes/booking/bookings.js');
 
 //Conexion con la base de datos
-//mongooseDBConnect();
+mongooseDBConnect();
 
 const app = express();
 app.use(express.json());
