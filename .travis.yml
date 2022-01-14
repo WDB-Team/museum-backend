@@ -1,0 +1,23 @@
+language: node_js
+cache:
+  directories:
+  - node_modules
+  - ~/.npm
+
+node_js:
+  - '14.17.4'
+
+git:
+  depth: 3
+
+script:
+  - yarn test
+
+deploy:
+  provider: heroku
+  skip-cleanup: true
+  keep-history: true
+  api_key: 771cba22-0814-46b3-9abd-b5c69a043acc
+  app: museum-backend-cuba
+  on:
+    repo: WDB-Team/museum-backend
