@@ -22,9 +22,9 @@ function bookingsApi(app) {
 
     router.post('/bookings', async function(req, res, next) {
         try {
-            const data = await BookingService.addBooking(req.body);
+            const data = await bookingService.addBooking(req.body);
             console.log('Agregado bug');
-            response.success(req, res, req.body, 200, true);
+            response.success(req, res, data, 200, true);
         } catch (error) {
             console.log('error');
             response.error(req, res, error.message, 500);
