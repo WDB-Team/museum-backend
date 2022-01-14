@@ -1,6 +1,6 @@
 const express = require('express');
 
-const config = require('./configs/');
+const config = require('./configs/config.js');
 const mongooseDBConnect = require('./libs/databases/mongoDB.js')
 
 const bookingsApi = require('./routes/booking/bookings.js');
