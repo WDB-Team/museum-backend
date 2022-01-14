@@ -12,7 +12,9 @@ git:
 
 script:
   - yarn test
-  - sudo apt-get install ruby2.7
+
+before_deploy:
+  - rvm $(travis_internal_ruby) --fuzzy do ruby -S gem install faraday -v 1.8.0
 
 deploy:
   provider: heroku
