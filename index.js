@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 
 const config = require('./configs/config.js');
 const mongooseDBConnect = require('./libs/databases/mongoDB.js')
@@ -9,6 +10,7 @@ const bookingsApi = require('./routes/booking/bookings.js');
 mongooseDBConnect();
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 
 //Router
